@@ -17,7 +17,7 @@ class COinS
 			:book_title => 'rft.btitle',
 			:title => 'rft.atitle',
 			:article_title => 'rft.atitle',
-			:author => 'rft.aucorp',
+			:author => 'rft.au',
 			:date => 'rft.date',
 			:place => 'rft.place',
 			:type => 'rft.genre',
@@ -32,7 +32,7 @@ class COinS
 	end
 	
 	def build_COinS_pairs(input)
-		input.inject([]) do |acc, inp|
+		input.inject(['ctx_ver=Z39.88-2004', 'rft_val_fmt=info:ofi/fmt:kev:mtx:book']) do |acc, inp|
 			key, value = inp
 			acc << "#{ @mapping[key]  }=#{ CGI.escape( value ) }"
 		end
