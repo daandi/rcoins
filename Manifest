@@ -1,4 +1,5 @@
+Manifest
 README
 Rakefile
 lib/rcoins.rb
-Manifest
+rcoins.gemspec
